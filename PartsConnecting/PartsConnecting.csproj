@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\HashTable\HashTableForString.csproj" />
+    <ProjectReference Include="..\SyntaxAnalyser\SyntaxAnalyser.csproj" />
+    <ProjectReference Include="..\LexicalScanner\LexicalScanner.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+</Project>
