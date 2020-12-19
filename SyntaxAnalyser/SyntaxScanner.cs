@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using SyntaxAnalyser.CoreStaff;
 
 using NLog;
+using LexicalScanner;
 
 namespace SyntaxAnalyser 
 {

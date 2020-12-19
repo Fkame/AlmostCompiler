@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lab2_LexicalScanner
+namespace LexicalScanner
 {
     /// <summary>
     /// Перечисление содержит все типы (категории) лексем, на которые были разделены все допустимые лексемы языка. 

@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using SyntaxAnalyser.CoreStaff;
-using System.Reflection;
+using LexicalScanner;
+
 
 namespace SyntaxAnalyser
 {

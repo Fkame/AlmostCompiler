@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 
-namespace Lab2_LexicalScanner
+namespace LexicalScanner
 {
     /// <summary>
     /// Проводит лексический анализ текста файла. На выходе получается таблица лексем.
