@@ -23,6 +23,9 @@ namespace LexicalScanner
         private char[] Splitters = { ';', '(', ')' };
         private char[] Conditions = { '>', '<', '=' };
 
+        public delegate void IdentificatorHandler(string identificator);
+        public event IdentificatorHandler NotifyAboutIdentificator;
+
         public LexemScanner(string fullText)
         {
             this.FullText = fullText;
@@ -64,10 +67,15 @@ namespace LexicalScanner
                     {
                         type = LexemType.Key_Word;
                     }
+
+                    // Сообщим обработчикам, что найден идентификатор
+                    NotifyAboutIdentificator?.Invoke(result.value.ToString());
+                    
                     AddCell(numOfStr, result.value.ToString(), type);
                     continue;               
                 }
 
+                /*
                 result = TryStringConstant(ref point);
                 if (result.isSuccess)
                 {
@@ -75,6 +83,7 @@ namespace LexicalScanner
                     AddCell(numOfStr, result.value.ToString(), LexemType.Char_Constant);
                     continue;
                 }
+                */
 
                 result = TryNumberconstant(ref point);
                 if (result.isSuccess)
