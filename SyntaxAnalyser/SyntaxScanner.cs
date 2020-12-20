@@ -10,7 +10,7 @@ namespace SyntaxAnalyser
     public class SyntaxScanner 
     {
 
-        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
+        //private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
 
         /// <summary>
         /// Таблица лексем, полученная после Лексического анализа.
@@ -42,12 +42,12 @@ namespace SyntaxAnalyser
             rules = new RulesMatrix();
             usedRulesList = new List<int>();
 
-            Logger.Debug("SyntaxScanner created!");
+            //Logger.Debug("SyntaxScanner created!");
         }
 
         public List<OutputTreeCell> DoAnalysis() 
         {
-            Logger.Debug("Analysis started!");
+            //Logger.Debug("Analysis started!");
             string inputLex = null;
             string stackLex = null;
             lexemTable.Add(new LexemDataCell(0, SpecialSymbs.END_SYMB, LexemType.Splitter));
@@ -58,10 +58,11 @@ namespace SyntaxAnalyser
 
                 string inputInner = string.Join(" ", this.InnerOfLexemArrayToStringArray(lexemArray, i));
                 string stackInner = string.Join(" ", stack.StackToArray());
-                Logger.Info("Input = {0} || Stack = {1}\n", inputInner, stackInner);
+                //Logger.Info("Input = {0} || Stack = {1}\n", inputInner, stackInner);
 
                 inputLex = cell.Lexem;
                 if (cell.LexType.Equals(LexemType.Identificator)) inputLex = "a";
+                if (cell.LexType.Equals(LexemType.Number_Constant)) inputLex = "a";
 
                 stackLex = stack.GetFirstTerminalSymb();
 
@@ -69,7 +70,7 @@ namespace SyntaxAnalyser
 
                 char? move = movingMatrix.GetMove(stackLex, inputLex);
 
-                Logger.Info("{0} {1} {2}\n", stackLex, move, inputLex);
+                //Logger.Info("{0} {1} {2}\n", stackLex, move, inputLex);
 
                 try 
                 {    
@@ -95,8 +96,9 @@ namespace SyntaxAnalyser
                                 "Нарушен синтаксис входного языка: связки слов " + stackLex + " + " + inputLex + " не предусмотрено!");
                     }
                 } catch (Exception ex) { 
-                    Logger.Error(ex, 
-                        "Во время очередного сдвига-свёртки произошла ошибка. Работа программы прекращена!\nMessage = {0}\nStack-trace:\n{1}\n", ex.Message, ex.StackTrace);
+                    Console.WriteLine("Message: {0}\nStaackTracke{1}", ex.Message, ex.StackTrace);
+                    //Logger.Error(ex, 
+                        //"Во время очередного сдвига-свёртки произошла ошибка. Работа программы прекращена!\nMessage = {0}\nStack-trace:\n{1}\n", ex.Message, ex.StackTrace);
                     return null;
                 }     
             }
@@ -109,7 +111,7 @@ namespace SyntaxAnalyser
             }
             else 
             {
-                Logger.Info("Разбор успешно окончен!\n");
+                //Logger.Info("Разбор успешно окончен!\n");
             }
 
             return this.BuildOutputTree();
@@ -132,7 +134,7 @@ namespace SyntaxAnalyser
 
         public string[] InnerOfLexemArrayToStringArray(LexemDataCell[] lexemArray, int startFrom) 
         {
-            Logger.Info("----Converter InnerOfLexemArrayToStringArray. ArrayLen = {0}, start index = {1}\n", lexemArray.Length, startFrom);
+            //Logger.Info("----Converter InnerOfLexemArrayToStringArray. ArrayLen = {0}, start index = {1}\n", lexemArray.Length, startFrom);
             if (startFrom >= lexemArray.Length) throw new ArgumentOutOfRangeException("Индекс начала превосходит размер массива!");
             string[] content = new string[lexemArray.Length - startFrom];
             for (int i = 0; i < content.Length; i++) 
@@ -154,12 +156,12 @@ namespace SyntaxAnalyser
 
         private void MakeRollingUp() 
         {
-            Logger.Debug("--Rolling up started!");
+            //Logger.Debug("--Rolling up started!");
             List<string> rule = new List<string>();
 
             string stackLexPost = SkipToNextTermSymb(rule);
             rule.Add(stackLexPost);
-            Logger.Info("--Added first VT to rule-set: {0}\n", stackLexPost);
+            //Logger.Info("--Added first VT to rule-set: {0}\n", stackLexPost);
 
             string stackLexPre = SkipToNextTermSymb(rule);
            
@@ -176,12 +178,12 @@ namespace SyntaxAnalyser
                 }
             }
 
-            Logger.Info("--Unused symb backed to stack: {0}\n", stackLexPre);
+            //Logger.Info("--Unused symb backed to stack: {0}\n", stackLexPre);
             stack.Push(stackLexPre);
 
             rule.Reverse();
 
-            Logger.Info("--Builded rule: {0}\n", string.Join(" ", rule.ToArray()));
+            //Logger.Info("--Builded rule: {0}\n", string.Join(" ", rule.ToArray()));
 
             int numOfRule = rules.GetNumberOfRule(rule.ToArray());
             if (numOfRule == -1) 
@@ -206,7 +208,7 @@ namespace SyntaxAnalyser
 
         private List<OutputTreeCell> BuildOutputTree() 
         {
-            Logger.Info("Building rule-list: {0}\n", string.Join(" ", usedRulesList.ToArray()));
+            //Logger.Info("Building rule-list: {0}\n", string.Join(" ", usedRulesList.ToArray()));
             OutputTree outputTree = new OutputTree();
             List<OutputTreeCell> tree = outputTree.GetOutputTree(this.rules, this.usedRulesList);      
             return tree;

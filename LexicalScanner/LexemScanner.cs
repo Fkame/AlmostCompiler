@@ -93,11 +93,14 @@ namespace LexicalScanner
                     continue;
                 }
 
-                if (FullText[point] == ':' & FullText[point + 1] == '=')
+                if (FullText[point] == ':' & (point < FullText.Length - 1))
                 {
-                    AddCell(numOfStr, ":=", LexemType.Assignment_Symbol);
-                    point += 1;
-                    continue;
+                    if (FullText[point + 1] == '=')
+                    {
+                        AddCell(numOfStr, ":=", LexemType.Assignment_Symbol);
+                        point += 1;
+                        continue;
+                    }
                 }
 
                 if (Splitters.Contains(FullText[point]))

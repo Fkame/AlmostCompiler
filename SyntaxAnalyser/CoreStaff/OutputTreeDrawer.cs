@@ -7,7 +7,7 @@ namespace SyntaxAnalyser.CoreStaff
     {
         public List<OutputTreeCell> OutputTree { get; set; }
 
-        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
+        //private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
 
         private int amountOfSlashesBeforeSymbol = 1;
         public int AmountOfSlashesBeforeSymbol 
@@ -41,7 +41,7 @@ namespace SyntaxAnalyser.CoreStaff
 
             treeD.Append(OutputTree[0].Value).Append('\n');
 
-            Logger.Info("GetMaxLevel = {0}, Len of OutputTree = {1}", GetMaxLevel(), OutputTree.Count);
+            //Logger.Info("GetMaxLevel = {0}, Len of OutputTree = {1}", GetMaxLevel(), OutputTree.Count);
 
             int lastNodeLvl = OutputTree[0].Level;
             for (int i = 1; i < OutputTree.Count; i++)
@@ -51,8 +51,8 @@ namespace SyntaxAnalyser.CoreStaff
                 if (lastNodeLvl < currentLvl) 
                     currentChildsAtLevels[lastNodeLvl] = FindAmountOfDirectChilds(i - 1);
 
-                Logger.Info("Now symb: [ {0} -> {1} ], currLvl={2}, lastLvl={3} array of direct childs: {4}", 
-                    currentLvl, currentNode.Value, currentLvl, lastNodeLvl, string.Join(" ", currentChildsAtLevels.ToArray()));
+                //Logger.Info("Now symb: [ {0} -> {1} ], currLvl={2}, lastLvl={3} array of direct childs: {4}", 
+                    //currentLvl, currentNode.Value, currentLvl, lastNodeLvl, string.Join(" ", currentChildsAtLevels.ToArray()));
 
                 for (int j = 0; j < currentLvl; j++) 
                 {
@@ -80,7 +80,7 @@ namespace SyntaxAnalyser.CoreStaff
 
         private void ReduceChildsAmountBy1(List<int> amountOnLvls, int lvlOfCurrentNode)
         {
-            Logger.Info("-- Redicing index = {0}", lvlOfCurrentNode - 1);
+            //Logger.Info("-- Redicing index = {0}", lvlOfCurrentNode - 1);
             if (amountOnLvls[lvlOfCurrentNode - 1] > 0) 
                 amountOnLvls[lvlOfCurrentNode - 1] -= 1;
         }
@@ -107,8 +107,8 @@ namespace SyntaxAnalyser.CoreStaff
                 count += 1;
             }
             
-            Logger.Info("---- FindAmountOfDirectChilds: indexOfParent={0}, countOfDirectChildrens={1}, lvlOfParent={2}", 
-                indexOfCalculatingCell, count, currentLvl);
+            //Logger.Info("---- FindAmountOfDirectChilds: indexOfParent={0}, countOfDirectChildrens={1}, lvlOfParent={2}", 
+                //indexOfCalculatingCell, count, currentLvl);
             return count;
 
         }

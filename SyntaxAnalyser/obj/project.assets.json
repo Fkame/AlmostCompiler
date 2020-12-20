@@ -126,6 +126,16 @@
         "runtime": {
           "lib/netcoreapp3.0/NLog.Extensions.Logging.dll": {}
         }
+      },
+      "LexicalScanner/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/LexicalScanner.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LexicalScanner.dll": {}
+        }
       }
     }
   },
@@ -318,10 +328,16 @@
         "nlog.extensions.logging.1.6.5.nupkg.sha512",
         "nlog.extensions.logging.nuspec"
       ]
+    },
+    "LexicalScanner/1.0.0": {
+      "type": "project",
+      "path": "../LexicalScanner/LexicalScanner.csproj",
+      "msbuildProject": "../LexicalScanner/LexicalScanner.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "LexicalScanner >= 1.0.0",
       "NLog >= 4.7.5",
       "NLog.Extensions.Logging >= 1.6.5"
     ]
@@ -332,11 +348,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "d:\\source\\PartsOfCompliler\\SyntaxAnalyser\\SyntaxAnalyser.csproj",
+      "projectUniqueName": "D:\\source\\PartsOfCompliler\\SyntaxAnalyser\\SyntaxAnalyser.csproj",
       "projectName": "SyntaxAnalyser",
-      "projectPath": "d:\\source\\PartsOfCompliler\\SyntaxAnalyser\\SyntaxAnalyser.csproj",
+      "projectPath": "D:\\source\\PartsOfCompliler\\SyntaxAnalyser\\SyntaxAnalyser.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "d:\\source\\PartsOfCompliler\\SyntaxAnalyser\\obj\\",
+      "outputPath": "D:\\source\\PartsOfCompliler\\SyntaxAnalyser\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -350,7 +366,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\source\\PartsOfCompliler\\LexicalScanner\\LexicalScanner.csproj": {
+              "projectPath": "D:\\source\\PartsOfCompliler\\LexicalScanner\\LexicalScanner.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

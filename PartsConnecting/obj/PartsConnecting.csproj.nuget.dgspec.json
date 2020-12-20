@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "d:\\source\\PartsOfCompliler\\PartsConnecting\\PartsConnecting.csproj": {}
+    "D:\\source\\PartsOfCompliler\\PartsConnecting\\PartsConnecting.csproj": {}
   },
   "projects": {
-    "d:\\source\\PartsOfCompliler\\HashTable\\HashTableForString.csproj": {
+    "D:\\source\\PartsOfCompliler\\HashTable\\HashTableForString.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\source\\PartsOfCompliler\\HashTable\\HashTableForString.csproj",
+        "projectUniqueName": "D:\\source\\PartsOfCompliler\\HashTable\\HashTableForString.csproj",
         "projectName": "HashTableForString",
-        "projectPath": "d:\\source\\PartsOfCompliler\\HashTable\\HashTableForString.csproj",
+        "projectPath": "D:\\source\\PartsOfCompliler\\HashTable\\HashTableForString.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "d:\\source\\PartsOfCompliler\\HashTable\\obj\\",
+        "outputPath": "D:\\source\\PartsOfCompliler\\HashTable\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -56,14 +56,14 @@
         }
       }
     },
-    "d:\\source\\PartsOfCompliler\\LexicalScanner\\LexicalScanner.csproj": {
+    "D:\\source\\PartsOfCompliler\\LexicalScanner\\LexicalScanner.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\source\\PartsOfCompliler\\LexicalScanner\\LexicalScanner.csproj",
+        "projectUniqueName": "D:\\source\\PartsOfCompliler\\LexicalScanner\\LexicalScanner.csproj",
         "projectName": "LexicalScanner",
-        "projectPath": "d:\\source\\PartsOfCompliler\\LexicalScanner\\LexicalScanner.csproj",
+        "projectPath": "D:\\source\\PartsOfCompliler\\LexicalScanner\\LexicalScanner.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "d:\\source\\PartsOfCompliler\\LexicalScanner\\obj\\",
+        "outputPath": "D:\\source\\PartsOfCompliler\\LexicalScanner\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -108,14 +108,14 @@
         }
       }
     },
-    "d:\\source\\PartsOfCompliler\\PartsConnecting\\PartsConnecting.csproj": {
+    "D:\\source\\PartsOfCompliler\\PartsConnecting\\PartsConnecting.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\source\\PartsOfCompliler\\PartsConnecting\\PartsConnecting.csproj",
+        "projectUniqueName": "D:\\source\\PartsOfCompliler\\PartsConnecting\\PartsConnecting.csproj",
         "projectName": "PartsConnecting",
-        "projectPath": "d:\\source\\PartsOfCompliler\\PartsConnecting\\PartsConnecting.csproj",
+        "projectPath": "D:\\source\\PartsOfCompliler\\PartsConnecting\\PartsConnecting.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "d:\\source\\PartsOfCompliler\\PartsConnecting\\obj\\",
+        "outputPath": "D:\\source\\PartsOfCompliler\\PartsConnecting\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -130,14 +130,14 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "d:\\source\\PartsOfCompliler\\HashTable\\HashTableForString.csproj": {
-                "projectPath": "d:\\source\\PartsOfCompliler\\HashTable\\HashTableForString.csproj"
+              "D:\\source\\PartsOfCompliler\\HashTable\\HashTableForString.csproj": {
+                "projectPath": "D:\\source\\PartsOfCompliler\\HashTable\\HashTableForString.csproj"
               },
-              "d:\\source\\PartsOfCompliler\\LexicalScanner\\LexicalScanner.csproj": {
-                "projectPath": "d:\\source\\PartsOfCompliler\\LexicalScanner\\LexicalScanner.csproj"
+              "D:\\source\\PartsOfCompliler\\LexicalScanner\\LexicalScanner.csproj": {
+                "projectPath": "D:\\source\\PartsOfCompliler\\LexicalScanner\\LexicalScanner.csproj"
               },
-              "d:\\source\\PartsOfCompliler\\SyntaxAnalyser\\SyntaxAnalyser.csproj": {
-                "projectPath": "d:\\source\\PartsOfCompliler\\SyntaxAnalyser\\SyntaxAnalyser.csproj"
+              "D:\\source\\PartsOfCompliler\\SyntaxAnalyser\\SyntaxAnalyser.csproj": {
+                "projectPath": "D:\\source\\PartsOfCompliler\\SyntaxAnalyser\\SyntaxAnalyser.csproj"
               }
             }
           }
@@ -170,14 +170,14 @@
         }
       }
     },
-    "d:\\source\\PartsOfCompliler\\SyntaxAnalyser\\SyntaxAnalyser.csproj": {
+    "D:\\source\\PartsOfCompliler\\SyntaxAnalyser\\SyntaxAnalyser.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\source\\PartsOfCompliler\\SyntaxAnalyser\\SyntaxAnalyser.csproj",
+        "projectUniqueName": "D:\\source\\PartsOfCompliler\\SyntaxAnalyser\\SyntaxAnalyser.csproj",
         "projectName": "SyntaxAnalyser",
-        "projectPath": "d:\\source\\PartsOfCompliler\\SyntaxAnalyser\\SyntaxAnalyser.csproj",
+        "projectPath": "D:\\source\\PartsOfCompliler\\SyntaxAnalyser\\SyntaxAnalyser.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "d:\\source\\PartsOfCompliler\\SyntaxAnalyser\\obj\\",
+        "outputPath": "D:\\source\\PartsOfCompliler\\SyntaxAnalyser\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -191,7 +191,11 @@
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\source\\PartsOfCompliler\\LexicalScanner\\LexicalScanner.csproj": {
+                "projectPath": "D:\\source\\PartsOfCompliler\\LexicalScanner\\LexicalScanner.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

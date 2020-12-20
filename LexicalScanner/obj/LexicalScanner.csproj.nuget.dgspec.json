@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "d:\\source\\PartsOfCompliler\\LexicalScanner\\LexicalScanner.csproj": {}
+    "D:\\source\\PartsOfCompliler\\LexicalScanner\\LexicalScanner.csproj": {}
   },
   "projects": {
-    "d:\\source\\PartsOfCompliler\\LexicalScanner\\LexicalScanner.csproj": {
+    "D:\\source\\PartsOfCompliler\\LexicalScanner\\LexicalScanner.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\source\\PartsOfCompliler\\LexicalScanner\\LexicalScanner.csproj",
+        "projectUniqueName": "D:\\source\\PartsOfCompliler\\LexicalScanner\\LexicalScanner.csproj",
         "projectName": "LexicalScanner",
-        "projectPath": "d:\\source\\PartsOfCompliler\\LexicalScanner\\LexicalScanner.csproj",
+        "projectPath": "D:\\source\\PartsOfCompliler\\LexicalScanner\\LexicalScanner.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "d:\\source\\PartsOfCompliler\\LexicalScanner\\obj\\",
+        "outputPath": "D:\\source\\PartsOfCompliler\\LexicalScanner\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config"

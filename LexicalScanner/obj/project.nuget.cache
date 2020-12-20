@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Oq5VGfxgGt/0vjL25TMhrewJOg7hyveQIpx/xyC5fLhr04vR63b2aGvBGEb/R7VU1dLTAysoV0iwZNGgl+l20g==",
+  "dgSpecHash": "HyUGNJcZ8ItbVsJRYAngCiLOp9Gy56xTZr0J8f/15vmSLaHFJcGo+ig34lCefB6y6wCoFx3NZ4+WyoEmS35xKQ==",
   "success": true,
-  "projectFilePath": "d:\\source\\PartsOfCompliler\\LexicalScanner\\LexicalScanner.csproj",
+  "projectFilePath": "D:\\source\\PartsOfCompliler\\LexicalScanner\\LexicalScanner.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

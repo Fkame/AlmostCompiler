@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "H1TItMCrTk0OdhSiaApKoSXDPhIkJEah8xTbjPJCF1qpUn9eio7V4jlw+EaSX5opcPJpyISwxZ2GbefFqm1wDA==",
+  "dgSpecHash": "r4jUb+n6JpJnmwZzIcDaKes7oJ2TN5smLfvm6pNvt/7gfGG5G3RIcW+Nbope3F3Mceg3RzCzax3w8EYs4KfLqg==",
   "success": true,
-  "projectFilePath": "d:\\source\\PartsOfCompliler\\SyntaxAnalyser\\SyntaxAnalyser.csproj",
+  "projectFilePath": "D:\\source\\PartsOfCompliler\\SyntaxAnalyser\\SyntaxAnalyser.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.extensions.configuration\\3.0.0\\microsoft.extensions.configuration.3.0.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\3.0.0\\microsoft.extensions.configuration.abstractions.3.0.0.nupkg.sha512",

@@ -1,0 +1,11 @@
+D:\source\PartsOfCompliler\LexicalScanner\bin\Debug\net5.0\LexicalScanner.deps.json
+D:\source\PartsOfCompliler\LexicalScanner\bin\Debug\net5.0\LexicalScanner.dll
+D:\source\PartsOfCompliler\LexicalScanner\bin\Debug\net5.0\ref\LexicalScanner.dll
+D:\source\PartsOfCompliler\LexicalScanner\bin\Debug\net5.0\LexicalScanner.pdb
+D:\source\PartsOfCompliler\LexicalScanner\obj\Debug\net5.0\LexicalScanner.GeneratedMSBuildEditorConfig.editorconfig
+D:\source\PartsOfCompliler\LexicalScanner\obj\Debug\net5.0\LexicalScanner.AssemblyInfoInputs.cache
+D:\source\PartsOfCompliler\LexicalScanner\obj\Debug\net5.0\LexicalScanner.AssemblyInfo.cs
+D:\source\PartsOfCompliler\LexicalScanner\obj\Debug\net5.0\LexicalScanner.csproj.CoreCompileInputs.cache
+D:\source\PartsOfCompliler\LexicalScanner\obj\Debug\net5.0\LexicalScanner.dll
+D:\source\PartsOfCompliler\LexicalScanner\obj\Debug\net5.0\ref\LexicalScanner.dll
+D:\source\PartsOfCompliler\LexicalScanner\obj\Debug\net5.0\LexicalScanner.pdb

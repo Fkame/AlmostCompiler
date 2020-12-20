@@ -1,0 +1,12 @@
+D:\source\PartsOfCompliler\HashTable\bin\Debug\net5.0\HashTableForString.deps.json
+D:\source\PartsOfCompliler\HashTable\bin\Debug\net5.0\HashTableForString.dll
+D:\source\PartsOfCompliler\HashTable\bin\Debug\net5.0\ref\HashTableForString.dll
+D:\source\PartsOfCompliler\HashTable\bin\Debug\net5.0\HashTableForString.pdb
+D:\source\PartsOfCompliler\HashTable\obj\Debug\net5.0\HashTableForString.csprojAssemblyReference.cache
+D:\source\PartsOfCompliler\HashTable\obj\Debug\net5.0\HashTableForString.GeneratedMSBuildEditorConfig.editorconfig
+D:\source\PartsOfCompliler\HashTable\obj\Debug\net5.0\HashTableForString.AssemblyInfoInputs.cache
+D:\source\PartsOfCompliler\HashTable\obj\Debug\net5.0\HashTableForString.AssemblyInfo.cs
+D:\source\PartsOfCompliler\HashTable\obj\Debug\net5.0\HashTableForString.csproj.CoreCompileInputs.cache
+D:\source\PartsOfCompliler\HashTable\obj\Debug\net5.0\HashTableForString.dll
+D:\source\PartsOfCompliler\HashTable\obj\Debug\net5.0\ref\HashTableForString.dll
+D:\source\PartsOfCompliler\HashTable\obj\Debug\net5.0\HashTableForString.pdb

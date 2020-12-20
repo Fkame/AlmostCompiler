@@ -151,6 +151,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
+          "LexicalScanner": "1.0.0",
           "NLog": "4.7.5",
           "NLog.Extensions.Logging": "1.6.5"
         },
@@ -382,11 +383,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "d:\\source\\PartsOfCompliler\\PartsConnecting\\PartsConnecting.csproj",
+      "projectUniqueName": "D:\\source\\PartsOfCompliler\\PartsConnecting\\PartsConnecting.csproj",
       "projectName": "PartsConnecting",
-      "projectPath": "d:\\source\\PartsOfCompliler\\PartsConnecting\\PartsConnecting.csproj",
+      "projectPath": "D:\\source\\PartsOfCompliler\\PartsConnecting\\PartsConnecting.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "d:\\source\\PartsOfCompliler\\PartsConnecting\\obj\\",
+      "outputPath": "D:\\source\\PartsOfCompliler\\PartsConnecting\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -401,14 +402,14 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "d:\\source\\PartsOfCompliler\\HashTable\\HashTableForString.csproj": {
-              "projectPath": "d:\\source\\PartsOfCompliler\\HashTable\\HashTableForString.csproj"
+            "D:\\source\\PartsOfCompliler\\HashTable\\HashTableForString.csproj": {
+              "projectPath": "D:\\source\\PartsOfCompliler\\HashTable\\HashTableForString.csproj"
             },
-            "d:\\source\\PartsOfCompliler\\LexicalScanner\\LexicalScanner.csproj": {
-              "projectPath": "d:\\source\\PartsOfCompliler\\LexicalScanner\\LexicalScanner.csproj"
+            "D:\\source\\PartsOfCompliler\\LexicalScanner\\LexicalScanner.csproj": {
+              "projectPath": "D:\\source\\PartsOfCompliler\\LexicalScanner\\LexicalScanner.csproj"
             },
-            "d:\\source\\PartsOfCompliler\\SyntaxAnalyser\\SyntaxAnalyser.csproj": {
-              "projectPath": "d:\\source\\PartsOfCompliler\\SyntaxAnalyser\\SyntaxAnalyser.csproj"
+            "D:\\source\\PartsOfCompliler\\SyntaxAnalyser\\SyntaxAnalyser.csproj": {
+              "projectPath": "D:\\source\\PartsOfCompliler\\SyntaxAnalyser\\SyntaxAnalyser.csproj"
             }
           }
         }

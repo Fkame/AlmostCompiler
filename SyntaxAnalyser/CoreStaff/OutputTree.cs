@@ -8,7 +8,7 @@ namespace SyntaxAnalyser.CoreStaff
     /// </summary>
     public class OutputTree 
     {
-        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
+        //private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
 
         public OutputTree () { }
 
@@ -19,29 +19,29 @@ namespace SyntaxAnalyser.CoreStaff
             OutputTreeCell root = new OutputTreeCell(0, SpecialSymbs.NOT_TERMINAL_SYMB);
             treeContainer.Add(root);
 
-            Logger.Info("Iteration 0, tree: {0}", string.Join(" || ", treeContainer.ToArray()));
+            //Logger.Info("Iteration 0, tree: {0}", string.Join(" || ", treeContainer.ToArray()));
 
             for (int ruleIdx = usedRulesList.Count - 1; ruleIdx >= 0; ruleIdx--)
             {
                 int iteration = usedRulesList.Count - ruleIdx;
-                Logger.Info("Iteration: {0} || Rule #{1} || size of tree: {2}", iteration, usedRulesList[ruleIdx], treeContainer.Count);
-                Logger.Info("- Tree at start: {0}", string.Join(" ", treeContainer.ToArray()));
+                //Logger.Info("Iteration: {0} || Rule #{1} || size of tree: {2}", iteration, usedRulesList[ruleIdx], treeContainer.Count);
+                //Logger.Info("- Tree at start: {0}", string.Join(" ", treeContainer.ToArray()));
 
                 string[] ruleSymbs = rulesMatrix.GetRuleByNumber(usedRulesList[ruleIdx]);
 
                 int insertIdx = lastIndexOfVnWithoutChilds(treeContainer) + 1;
                 if ((insertIdx - 1) < 0) break;
 
-                Logger.Info("-- Last index of VN without childs: {0}", insertIdx - 1);
+                //Logger.Info("-- Last index of VN without childs: {0}", insertIdx - 1);
                 int childsLevel = treeContainer[insertIdx - 1].Level + 1;
 
                 // Закидывание символов из текущего правила рядом с нетерминалом, который они раскрывают
                 foreach (string symb in Reverse(ruleSymbs)) { treeContainer.Insert(insertIdx, new OutputTreeCell(childsLevel, symb)); }
 
-                Logger.Info("- Tree at end: {0}", string.Join(" ", treeContainer.ToArray()));
+                //Logger.Info("- Tree at end: {0}", string.Join(" ", treeContainer.ToArray()));
             }
 
-            Logger.Info("\nFull tree: {0}\n", string.Join(" || ", treeContainer.ToArray()));
+           // Logger.Info("\nFull tree: {0}\n", string.Join(" || ", treeContainer.ToArray()));
 
             return treeContainer;
         }
@@ -60,7 +60,7 @@ namespace SyntaxAnalyser.CoreStaff
         {
             if (container.Count == 0) 
             {
-                Logger.Info("-- OutputTree is empty");
+                //Logger.Info("-- OutputTree is empty");
                 return -1;
             }
             if (container.Count == 1 & container[0].Value.Equals(SpecialSymbs.NOT_TERMINAL_SYMB)) return 0;
@@ -76,7 +76,7 @@ namespace SyntaxAnalyser.CoreStaff
                 return i;     
             }
 
-            Logger.Info("-- All VN with child elems");
+            //Logger.Info("-- All VN with child elems");
             return -1;
         }
 

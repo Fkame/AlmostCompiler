@@ -42,7 +42,7 @@ namespace SyntaxAnalyser.CoreStaff
             int indexRow = Array.IndexOf(keysOfRows, rowKey);
             int indexCol = Array.IndexOf(keysOfColumns, columnKey);
             if (indexRow == -1 || indexCol == -1) 
-                throw new ArgumentException("No such key words in Moving Matrix!");
+                throw new ArgumentException($"No such key words in Moving Matrix: {rowKey} ? {columnKey}");
             return movings[indexRow, indexCol];
         }
     }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "d:\\source\\PartsOfCompliler\\HashTable\\HashTableForString.csproj": {}
+    "D:\\source\\PartsOfCompliler\\HashTable\\HashTableForString.csproj": {}
   },
   "projects": {
-    "d:\\source\\PartsOfCompliler\\HashTable\\HashTableForString.csproj": {
+    "D:\\source\\PartsOfCompliler\\HashTable\\HashTableForString.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\source\\PartsOfCompliler\\HashTable\\HashTableForString.csproj",
+        "projectUniqueName": "D:\\source\\PartsOfCompliler\\HashTable\\HashTableForString.csproj",
         "projectName": "HashTableForString",
-        "projectPath": "d:\\source\\PartsOfCompliler\\HashTable\\HashTableForString.csproj",
+        "projectPath": "D:\\source\\PartsOfCompliler\\HashTable\\HashTableForString.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "d:\\source\\PartsOfCompliler\\HashTable\\obj\\",
+        "outputPath": "D:\\source\\PartsOfCompliler\\HashTable\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config"
