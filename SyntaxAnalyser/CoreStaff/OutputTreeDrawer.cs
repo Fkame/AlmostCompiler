@@ -3,20 +3,43 @@ using System.Text;
 
 namespace SyntaxAnalyser.CoreStaff 
 {
+    /// <summary>
+    /// Класс, выполняющий красивую структурированную отрисовку дерева в консоль.
+    /// </summary>
     public class OutputTreeDrawer 
     {
+        /// <summary>
+        /// Ссылка на контейнер с деревом вывода
+        /// </summary>
+        /// <value></value>
         public List<OutputTreeCell> OutputTree { get; set; }
 
         //private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
-
+        
+        /// <summary>
+        /// Параметр, хранящий количество горизонтальный черточек перед символом.
+        /// </summary>
         private int amountOfSlashesBeforeSymbol = 1;
+
+        /// <summary>
+        /// Свойство, позволяющее задать количество горизонтальный черточек перед символом.
+        /// </summary>
+        /// <value></value>
         public int AmountOfSlashesBeforeSymbol 
         { 
             get { return amountOfSlashesBeforeSymbol; } 
             set { if (value >= 1) amountOfSlashesBeforeSymbol = value; } 
         }
 
+        /// <summary>
+        /// Параметр, хранящий количество пробелов перед символом.
+        /// </summary>
         private int amountOfSpacesBeforeSymbol = 1;
+
+        /// <summary>
+        /// Свойство, позволяющее задать количество пробелов перед символом.
+        /// </summary>
+        /// <value></value>
         public int AmountOfSpacesBeforeSymbol 
         { 
             get { return amountOfSpacesBeforeSymbol; } 
@@ -28,6 +51,9 @@ namespace SyntaxAnalyser.CoreStaff
             OutputTree = tree;
         }
 
+        /// <summary>
+        /// Метод, выполняющий красивую отрисвоку Дерева вывода в консоль.
+        /// </summary>
         public void DrawToConsole() 
         {
             if (OutputTree.Count == 0) throw new System.Exception("Пустое дерево - нечего рисовать!");
@@ -85,16 +111,32 @@ namespace SyntaxAnalyser.CoreStaff
                 amountOnLvls[lvlOfCurrentNode - 1] -= 1;
         }
 
+        /// <summary>
+        /// Непосредственно отрисовка дерева по построенному формату.
+        /// </summary>
+        /// <param name="treeD"></param>
         private void MakeDrawing(StringBuilder treeD) 
         {
             System.Console.WriteLine(treeD);
         }
 
+        /// <summary>
+        /// Метод, дублирующий переданный символ указанное количество раз в указанный контейнер.
+        /// </summary>
+        /// <param name="targerToSpam">Контейнер, в который необходимо продублировать переданный символ</param>
+        /// <param name="amount">Количество раз, которое необходимо продублировать переданный символ</param>
+        /// <param name="symb">Символ, который необходимо продублировать</param>
         private void SpamSymbol(StringBuilder targerToSpam, int amount, char symb) 
         {
             while (amount-- > 0) targerToSpam.Append(symb);
         }
 
+        /// <summary>
+        /// Метод находит количество прямых потомков узла.
+        /// Прямые потомки, это узлы, уровень которые на 1 выше уровня интересующего узла.
+        /// </summary>
+        /// <param name="indexOfCalculatingCell"></param>
+        /// <returns></returns>
         private int FindAmountOfDirectChilds(int indexOfCalculatingCell)
         {
             int currentLvl = OutputTree[indexOfCalculatingCell].Level;
@@ -113,6 +155,10 @@ namespace SyntaxAnalyser.CoreStaff
 
         }
         
+        /// <summary>
+        /// Метод находит максимальный уровень в дереве.
+        /// </summary>
+        /// <returns></returns>
         public int GetMaxLevel() 
         {
             int maxLvl = 0;
@@ -123,6 +169,11 @@ namespace SyntaxAnalyser.CoreStaff
             return maxLvl;
         }
 
+        /// <summary>
+        /// Метод находит сколько узлов на каком уровне находятся. Что-то вроде общей статистики по дереву.
+        /// </summary>
+        /// <param name="tree"></param>
+        /// <returns></returns>
         public List<int> GetAmountAtEachLevel (List<OutputTreeCell> tree) 
         {
             List<int> amountAtLevels = new List<int>();

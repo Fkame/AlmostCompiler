@@ -2,13 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using System.Text.RegularExpressions;
 
 namespace LexicalScanner
 {
     /// <summary>
-    /// Проводит лексический анализ текста файла. На выходе получается таблица лексем.
+    /// Проводит лексический анализ текста файла. На выходе получается заполненная таблица лексем.
     /// </summary>
     public class LexemScanner
     {
@@ -16,14 +14,39 @@ namespace LexicalScanner
         /// Текст файла.
         /// </summary>
         private string FullText;
-
+        
+        /// <summary>
+        /// Таблица Лексем. Сюда заносятся все найденные лексемы.
+        /// </summary>
         List<LexemDataCell> LexemTable = null;
 
+        /// <summary>
+        /// Список ключевых слов.
+        /// </summary>
+        /// <value></value>
         private string[] KeyWords = { "for", "do" };
+
+        /// <summary>
+        /// Список разделителей.
+        /// </summary>
+        /// <returns></returns>
         private char[] Splitters = { ';', '(', ')' };
+
+        /// <summary>
+        /// Список операций.
+        /// </summary>
+        /// <value></value>
         private char[] Conditions = { '>', '<', '=' };
 
+        /// <summary>
+        /// Делегат для вызова методов, подписанных на событие NotifyAboutIdentificator.
+        /// </summary>
+        /// <param name="identificator"></param>
         public delegate void IdentificatorHandler(string identificator);
+
+        /// <summary>
+        /// Событие вызываемое, когда среди лексем анализатор находит Идентификаторы.
+        /// </summary>
         public event IdentificatorHandler NotifyAboutIdentificator;
 
         public LexemScanner(string fullText)
@@ -74,8 +97,7 @@ namespace LexicalScanner
                     AddCell(numOfStr, result.value.ToString(), type);
                     continue;               
                 }
-
-                /*
+                
                 result = TryStringConstant(ref point);
                 if (result.isSuccess)
                 {
@@ -83,7 +105,6 @@ namespace LexicalScanner
                     AddCell(numOfStr, result.value.ToString(), LexemType.Char_Constant);
                     continue;
                 }
-                */
 
                 result = TryNumberconstant(ref point);
                 if (result.isSuccess)
@@ -120,10 +141,11 @@ namespace LexicalScanner
         }
 
         /// <summary>
-        /// 
+        /// Метод анализирует, является ли последующая цепочка символов идентификатором. 
+        /// Если нет, то значение IsSuccess будет false, иначе true
         /// </summary>
-        /// <param name="index"></param>
-        /// <returns></returns>
+        /// <param name="index">Индекс, с которого начинается анализ</param>
+        /// <returns>Кортеж: удачно ли прошла операция, значение.</returns>
         internal (bool isSuccess, StringBuilder value) TryIdentificator(ref int index)
         {
             if (index == FullText.Length) return (false, null);
@@ -153,24 +175,40 @@ namespace LexicalScanner
 
             return (true, container);
         }
-
+        
+        /// <summary>
+        /// Определяет, является ли входной символ буквой английского алфавита.
+        /// </summary>
+        /// <param name="ch"></param>
+        /// <returns></returns>
         internal bool IsEnLetter(char ch)
         {
             return ((ch >= 'a' & ch <= 'z') | (ch >= 'A' & ch <= 'Z'));
         }
 
+        /// <summary>
+        /// Определяет, является ли входной символ цифрой.
+        /// </summary>
+        /// <param name="ch"></param>
+        /// <returns></returns>
         internal bool IsNumber(char ch)
         {
             return ch >= '0' & ch <= '9';
         }
-
+        
+        /// <summary>
+        /// Определяет, является ли входная строка ключевым словом.
+        /// </summary>
+        /// <param name="identificator"></param>
+        /// <returns></returns>
         internal bool IsKeyWord(StringBuilder identificator)
         {
             return KeyWords.Contains(identificator.ToString());
         }
 
         /// <summary>
-        /// 
+        /// Метод анализирует, является ли последующая цепочка символов символьной константой. 
+        /// Если нет, то значение IsSuccess будет false, иначе true
         /// </summary>
         /// <param name="index"></param>
         /// <returns></returns>
@@ -204,7 +242,8 @@ namespace LexicalScanner
         }
 
         /// <summary>
-        /// 
+        /// Метод анализирует, является ли последующая цепочка символов числом. 
+        /// Если нет, то значение IsSuccess будет false, иначе true
         /// </summary>
         /// <param name="index"></param>
         /// <returns></returns>
@@ -228,6 +267,12 @@ namespace LexicalScanner
             return (true, container);
         }
 
+        /// <summary>
+        /// Добавляет значение в таблицу лексем
+        /// </summary>
+        /// <param name="numOfStr">Номер строки в файле, где написано слово</param>
+        /// <param name="lexem">Лексема</param>
+        /// <param name="lexType">Тип лексемы. См. перечисление LexemType</param>
         internal void AddCell(int numOfStr, string lexem, LexemType lexType)
         {
             LexemTable.Add(new LexemDataCell(numOfStr, lexem, lexType));

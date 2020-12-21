@@ -9,3 +9,4 @@ D:\source\PartsOfCompliler\LexicalScanner\obj\Debug\net5.0\LexicalScanner.csproj
 D:\source\PartsOfCompliler\LexicalScanner\obj\Debug\net5.0\LexicalScanner.dll
 D:\source\PartsOfCompliler\LexicalScanner\obj\Debug\net5.0\ref\LexicalScanner.dll
 D:\source\PartsOfCompliler\LexicalScanner\obj\Debug\net5.0\LexicalScanner.pdb
+D:\source\PartsOfCompliler\LexicalScanner\obj\Debug\net5.0\LexicalScanner.csprojAssemblyReference.cache

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace HashTableApp.HashTableStructure.ReHashFunctions
 {
     /// <summary>
-    /// 
+    /// Интерфейс, задающий контракт на то, что должна уметь делать рехэш-функция.
     /// </summary>
     public interface IRehashFunction
     {

@@ -19,7 +19,28 @@ namespace PartsConnecting
 {
     class EnterPoint
     {
+        /// <summary>
+        /// Таблица идентификаторов
+        /// </summary>
         private HashTableForString hashTable;
+
+        /// <summary>
+        /// Нужно ли выводить Таблицу Идентификаторов в конце работы программы.
+        /// </summary>
+        /// <value></value>
+        public bool NeedToShowIdentificatorTable {get; set;} = true;
+
+        /// <summary>
+        /// Нужно ли выводить Таблицу Лексем в конце работы программы.
+        /// </summary>
+        /// <value></value>
+        public bool NeedToShowLexemTable {get; set;} = true;
+
+        /// <summary>
+        /// Нужно ли выводить дерево вывода в конце программы
+        /// </summary>
+        /// <value></value>
+        public bool NeedToShowOutputtree {get; set;} = true;
 
         static void Main(string[] args)
         {
@@ -61,16 +82,59 @@ namespace PartsConnecting
             List<OutputTreeCell> tree = synAnal.DoAnalysis();
 
             // Отрисовка получившегося дерева в консоль
-            OutputTreeDrawer drawer = new OutputTreeDrawer(tree);
-            drawer.DrawToConsole();
+            if (NeedToShowOutputtree)
+            {
+                this.WriteLineColor("OutPut tree:", ConsoleColor.DarkGreen, false);
+                Drawer.DrawOutputTreeToConsole(tree);
+                Console.WriteLine();
+            }
 
+            // Отрисовка таблицы лексем
+            if (NeedToShowLexemTable)
+            {
+                this.WriteLineColor("Lexem table:", ConsoleColor.DarkRed, false);
+                Drawer.DrawLexTableToConsole(lexTable);
+                Console.WriteLine();
+            }
+
+            // Отрисовка отрисовка таблицы идентификаторов
+            if (NeedToShowIdentificatorTable)
+            {
+                this.WriteLineColor("Identificator table:", ConsoleColor.DarkYellow, false);
+                Drawer.DrawIdentTableToConsole(hashTable);
+                Console.WriteLine();
+            }
+        
         }
 
+        /// <summary>
+        /// Метод выводит текст с определённым цветом.
+        /// </summary>
+        /// <param name="text">Текст для выода в консоль</param>
+        /// <param name="color">Цвет, с которым должен вывестись цвет</param>
+        /// <param name="oneMoreNewLine">Нужно ли добавлять ещё одну пустую строку в конце</param>
+        private void WriteLineColor(string text, ConsoleColor color, bool oneMoreNewLine)
+        {
+            Console.ForegroundColor = color;
+            Console.WriteLine(text);
+            Console.ResetColor();
+            if (oneMoreNewLine) Console.WriteLine();
+        }
+
+        /// <summary>
+        /// Обработчик события, подписанный на Лексический анализатор. Вызывается, если Лексический Анализатор встретил Идентификатор.
+        /// </summary>
+        /// <param name="identificator"></param>
         private void OnAddIdentificator(string identificator)
         {
             hashTable.Add(identificator);
         }
 
+        /// <summary>
+        /// Метод, полностью считывающий содержимое переданного файла.
+        /// </summary>
+        /// <param name="file">Файл, содержимое которого необходимо прочитать.</param>
+        /// <returns>Текст файла</returns>
         private string ReadToEnd(FileInfo file)
         {
             StreamReader reader = new StreamReader(file.OpenRead());

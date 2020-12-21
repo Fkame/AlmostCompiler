@@ -12,6 +12,12 @@ namespace SyntaxAnalyser.CoreStaff
 
         public OutputTree () { }
 
+        /// <summary>
+        /// Метод, используя матрицу правил и последовательность использованных правил, строит Дерево Вывода.
+        /// </summary>
+        /// <param name="rulesMatrix"></param>
+        /// <param name="usedRulesList"></param>
+        /// <returns></returns>
         public List<OutputTreeCell> GetOutputTree(RulesMatrix rulesMatrix, List<int> usedRulesList)
         { 
             List<OutputTreeCell> treeContainer = new List<OutputTreeCell>();
@@ -45,7 +51,12 @@ namespace SyntaxAnalyser.CoreStaff
 
             return treeContainer;
         }
-
+        
+        /// <summary>
+        /// Метод производит переворачивание массива строк.
+        /// </summary>
+        /// <param name="array"></param>
+        /// <returns></returns>
         public string[] Reverse(string[] array)
         {
             string[] arrayR = new string[array.Length];
@@ -56,6 +67,12 @@ namespace SyntaxAnalyser.CoreStaff
             }
             return arrayR;
         }
+
+        /// <summary>
+        /// Ищет в контейнере последний терминальный символ, у которого нет дочерних элементов.
+        /// </summary>
+        /// <param name="container"></param>
+        /// <returns></returns>
         private int lastIndexOfVnWithoutChilds(List<OutputTreeCell> container) 
         {
             if (container.Count == 0) 
@@ -82,6 +99,10 @@ namespace SyntaxAnalyser.CoreStaff
 
     }
 
+    /// <summary>
+    /// Структура представляет собой один узел дерева вывода, который инкапсулирует уровень узла в дереве и значение.
+    /// Уровень необходим для того, чтобы было возможно установить иерархию узлов.
+    /// </summary>
     public struct OutputTreeCell 
     {
         public int Level {get; set;}
@@ -96,33 +117,6 @@ namespace SyntaxAnalyser.CoreStaff
         public override string ToString() 
         {
             return ("[ " + Level + " -> " + Value + " ]");
-        }
-    }
-
-    internal class TreeCell
-    {
-        public TreeCell ParentCell {get; set;} = null;
-
-        public int DeepLevel {get; private set;}
-        
-        private List<TreeCell> childCells = null;
-
-        string lexemValue;
-
-        internal TreeCell (string lexemValue, int level) 
-        {
-            this.lexemValue = lexemValue;
-            DeepLevel = level;
-        }
-
-        public void AddChildCell(TreeCell childCell) 
-        {
-            this.childCells.Add(childCell);
-        }
-
-        public void SetChildCells(List<TreeCell> childCells) 
-        {
-            this.childCells = new List<TreeCell>(childCells);
         }
     }
 }

@@ -9,7 +9,7 @@ using System.Numerics;
 namespace HashTableApp.HashTableStructure.HashFunctions
 {
     /// <summary>
-    /// Маркировочный интерфейс, создаанный для группировки хэш-функций.
+    /// Интерфейс, задающий контракт на то, что должна уметь делать хэш-функция.
     /// </summary>
     public interface IHashFunction
     {

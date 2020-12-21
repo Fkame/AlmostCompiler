@@ -7,6 +7,9 @@ using LexicalScanner;
 
 namespace SyntaxAnalyser 
 {
+    /// <summary>
+    /// Синтаксический анализатор. Проверяет корректность входных символов с точки зрения синтаксиса используемого языка.
+    /// </summary>
     public class SyntaxScanner 
     {
 
@@ -27,6 +30,9 @@ namespace SyntaxAnalyser
         /// </summary>
         private SymbolsStack stack;
 
+        /// <summary>
+        /// Матрица правил.
+        /// </summary>
         private RulesMatrix rules;
 
         /// <summary>
@@ -45,6 +51,10 @@ namespace SyntaxAnalyser
             //Logger.Debug("SyntaxScanner created!");
         }
 
+        /// <summary>
+        /// Запуск основного алгоритма синтаксического анализатора - анализа синтаксиса.
+        /// </summary>
+        /// <returns></returns>
         public List<OutputTreeCell> DoAnalysis() 
         {
             //Logger.Debug("Analysis started!");
@@ -61,8 +71,11 @@ namespace SyntaxAnalyser
                 //Logger.Info("Input = {0} || Stack = {1}\n", inputInner, stackInner);
 
                 inputLex = cell.Lexem;
+
+                // Некоторые замены для алгоритма
                 if (cell.LexType.Equals(LexemType.Identificator)) inputLex = "a";
                 if (cell.LexType.Equals(LexemType.Number_Constant)) inputLex = "a";
+                if (cell.LexType.Equals(LexemType.Char_Constant)) inputLex = "a";
 
                 stackLex = stack.GetFirstTerminalSymb();
 
@@ -154,6 +167,10 @@ namespace SyntaxAnalyser
             this.stack.Push(inputLex);
         }
 
+        /// <summary>
+        /// Операция свёртки - выделение правила из стека и проверка его на валидность, после чего добавление списка правил правилом, которму
+        /// соответствует выделенный из стека набор символов.
+        /// </summary>
         private void MakeRollingUp() 
         {
             //Logger.Debug("--Rolling up started!");
@@ -206,6 +223,10 @@ namespace SyntaxAnalyser
             return stackLex;
         }  
 
+        /// <summary>
+        /// Строит дерево вывода по списку использованных правил.
+        /// </summary>
+        /// <returns>Дерево вывода.</returns>
         private List<OutputTreeCell> BuildOutputTree() 
         {
             //Logger.Info("Building rule-list: {0}\n", string.Join(" ", usedRulesList.ToArray()));

@@ -2,8 +2,14 @@ using System;
 
 namespace SyntaxAnalyser.CoreStaff 
 {
+    /// <summary>
+    /// Список правил остовной грамматики
+    /// </summary>
     public class RulesMatrix 
     {
+        /// <summary>
+        /// Контейнер, хранящий правила грамматики.
+        /// </summary>
         private string[][] rules = new string[10][];
 
         public RulesMatrix() 
@@ -20,6 +26,10 @@ namespace SyntaxAnalyser.CoreStaff
             rules[9] = new string[] { "a", "=", "a"};
         }
 
+        /// <summary>
+        /// Возвращает количество правил в контейнере правил.
+        /// </summary>
+        /// <value></value>
         public int Count { get {return rules.Length;} }
 
         public RulesMatrix(string[][] rules) 
@@ -27,6 +37,11 @@ namespace SyntaxAnalyser.CoreStaff
             this.rules = rules;
         }
 
+        /// <summary>
+        /// Метод определяет, содержится ли переданное правило в списке правил.
+        /// </summary>
+        /// <param name="rule">Правило, существование которого нужно проверить.</param>
+        /// <returns></returns>
         public bool IsContains(string[] rule) 
         {
             for (int rulesIdx = 0; rulesIdx < rules.Length; rulesIdx++) 
@@ -47,6 +62,11 @@ namespace SyntaxAnalyser.CoreStaff
             return false;
         }
 
+        /// <summary>
+        /// Возвращает, под каким номером хранится переданное правило.
+        /// </summary>
+        /// <param name="rule"></param>
+        /// <returns>Возвращает номер правила в контейнере, или -1, если такого правила не существует.</returns>
         public int GetNumberOfRule(string[] rule) 
         {
             for (int rulesIdx = 0; rulesIdx < rules.Length; rulesIdx++) 
